@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/MyButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Hello" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="142.3dp"
+        android:id="@+id/imageView1" />
+    <TableLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayout1">
+        <TableRow
+            android:id="@+id/tableRow1">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_column="0"
+                android:id="@+id/imageView2"
+                android:layout_height="50dp"
+                android:layout_width="50dp" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_column="1"
+                android:id="@+id/imageView3"
+                android:layout_height="50dp"
+                android:layout_width="50dp" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_column="2"
+                android:layout_height="50dp"
+                android:layout_width="50dp"
+                android:id="@+id/imageView4" />
+            <ImageView
+                android:layout_column="3"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_height="50dp"
+                android:layout_width="50dp"
+                android:id="@+id/imageView5" />
+        </TableRow>
+    </TableLayout>
+    <TextView
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+</LinearLayout>
