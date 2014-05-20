@@ -30,11 +30,11 @@ namespace XamarinPortableRes.iOS
             // text content
             this.text1.Text = XamarinPortableRes.Lib.Properties.Resources.Message1;
             // image contents
-            this.imageBlue.Image = ToBitmap(XamarinPortableRes.Lib.Resources.MarkBlue);
-            this.imageGreen.Image = ToBitmap(XamarinPortableRes.Lib.Resources.MarkGreen);
-            this.imageOrange.Image = ToBitmap(XamarinPortableRes.Lib.Resources.MarkOrange);
-            this.imagePurple.Image = ToBitmap(XamarinPortableRes.Lib.Resources.MarkPurple);
-            this.imageRed.Image = ToBitmap(XamarinPortableRes.Lib.Resources.MarkRed);
+            this.imageBlue.Image = XamarinPortableRes.Lib.Resources.MarkBlue.ToBitmap();
+            this.imageGreen.Image = XamarinPortableRes.Lib.Resources.MarkGreen.ToBitmap();
+            this.imageOrange.Image = XamarinPortableRes.Lib.Resources.MarkOrange.ToBitmap();
+            this.imagePurple.Image = XamarinPortableRes.Lib.Resources.MarkPurple.ToBitmap();
+            this.imageRed.Image = XamarinPortableRes.Lib.Resources.MarkRed.ToBitmap();
         }
 
 		public override void ViewWillAppear (bool animated)
@@ -58,14 +58,17 @@ namespace XamarinPortableRes.iOS
 		}
 
 		#endregion
+    }
+
+    public static class StreamExtentions {
         /// <summary>
         /// Convert to Bitmap from System.IO.Stream
         /// </summary>
         /// <param name="st"></param>
         /// <returns></returns>
-        UIImage ToBitmap(System.IO.Stream st)
+        public static UIImage ToBitmap(this System.IO.Stream st)
         {
-            var data = NSData.FromStream( st );
+            var data = NSData.FromStream(st);
             var bmp = UIImage.LoadFromData(data);
             return bmp;
         }

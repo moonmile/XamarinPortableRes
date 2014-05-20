@@ -40,20 +40,16 @@ namespace XamarinPortableRes.Android
             this.imagePurple = FindViewById<ImageView>(Resource.Id.imageView4);
             this.imageRed = FindViewById<ImageView>(Resource.Id.imageView5);
             // image contents
-            imageBlue.SetImageBitmap(ToBitmap(XamarinPortableRes.Lib.Resources.MarkBlue));
-            imageGreen.SetImageBitmap(ToBitmap(XamarinPortableRes.Lib.Resources.MarkGreen));
-            imageOrange.SetImageBitmap(ToBitmap(XamarinPortableRes.Lib.Resources.MarkOrange));
-            imagePurple.SetImageBitmap(ToBitmap(XamarinPortableRes.Lib.Resources.MarkPurple));
-            imageRed.SetImageBitmap(ToBitmap(XamarinPortableRes.Lib.Resources.MarkRed));
+            imageBlue.SetImageBitmap(XamarinPortableRes.Lib.Resources.MarkBlue.ToBitmap());
+            imageGreen.SetImageBitmap(XamarinPortableRes.Lib.Resources.MarkGreen.ToBitmap());
+            imageOrange.SetImageBitmap(XamarinPortableRes.Lib.Resources.MarkOrange.ToBitmap());
+            imagePurple.SetImageBitmap(XamarinPortableRes.Lib.Resources.MarkPurple.ToBitmap());
+            imageRed.SetImageBitmap(XamarinPortableRes.Lib.Resources.MarkRed.ToBitmap());
         }
 
-        /// <summary>
-        /// Convert to Bitmap from System.IO.Stream
-        /// </summary>
-        /// <param name="st"></param>
-        /// <returns></returns>
-        global::Android.Graphics.Bitmap ToBitmap(System.IO.Stream st)
-        {
+    }
+    public static class StreamExtentions {
+        public static global::Android.Graphics.Bitmap ToBitmap( this System.IO.Stream st ) {
             using (var mem = new System.IO.MemoryStream())
             {
                 st.CopyTo(mem);
